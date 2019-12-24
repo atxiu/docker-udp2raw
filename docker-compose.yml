@@ -1,0 +1,9 @@
+version: '3'
+services:
+  udp2raw-aes:
+    image: atxiu/udp2raw-aes
+    restart: always
+    volumes:
+        - ./config.conf:/config.conf
+    command: ./udp2raw_amd64_hw_aes --conf-file config.conf
+    network_mode: "host"
